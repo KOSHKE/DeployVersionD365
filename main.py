@@ -2,9 +2,10 @@ import PySimpleGUI
 import layouts
 import controller
 
-window = PySimpleGUI.Window('Deploy Version D365', layouts.getLayout('MainWindow'))
+window = PySimpleGUI.Window('Deploy Version D365',
+                            layouts.getLayout('MainWindow'))
 
-while True:                           
+while True:
     event, values = window.read()
     if event in (None, 'Exit'):
         break
@@ -12,6 +13,8 @@ while True:
         window.close()
     if event in ('Submit'):
         result = controller.runOperation(values['-FOLDER-'], values)
-        if (result == True):
-            window = PySimpleGUI.Window('Done', layouts.getLayout('ErrorWindow', 'Done'))
+        if result is True:
+            window = PySimpleGUI.Window('Done',
+                                        layouts.getLayout('ErrorWindow',
+                                                          'Done'))
             window.read()
