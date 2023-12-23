@@ -46,7 +46,7 @@ def processHotfixInstallationInfo(path: str, parameters):
     for elem in root.findall('MetadataModuleList'):
         for node in elem.findall('string'):
             for key in parameters.keys():
-                if (if parameters[key] is False):
+                if parameters[key] is False:
                     checkAndRemoveNode(elem, node, setup.xmlDict[key])
 
     # Process AllComponentList
@@ -54,7 +54,7 @@ def processHotfixInstallationInfo(path: str, parameters):
         for node in elem.findall('ArrayOfString'):
             for value in node.findall('string'):
                 for key in parameters.keys():
-                    if (if parameters[key] is False):
+                    if parameters[key] is False:
                         checkAndRemoveNodeWithValue(elem, value, node, setup.xmlDict[key])
 
     file.write(path)
@@ -65,5 +65,5 @@ def deleteFiles(path: str, parameters):
     for root, dirs, files in os.walk(path):
         for file in files:
             for key in parameters.keys():
-                if (if parameters[key] is False):
+                if parameters[key] is False:
                     checkAndRemoveFile(os, file, setup.filesDict[key])
