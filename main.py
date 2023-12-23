@@ -3,7 +3,7 @@ import layouts
 import controller
 
 window = PySimpleGUI.Window('Deploy Version D365',
-                            layouts.getLayout('MainWindow'))
+                            layouts.get_layout('MainWindow'))
 
 while True:
     event, values = window.read()
@@ -12,9 +12,9 @@ while True:
     if event in ('Cancel'):
         window.close()
     if event in ('Submit'):
-        result = controller.runOperation(values['-FOLDER-'], values)
+        result = controller.run_operation(values['-FOLDER-'], values)
         if result is True:
             window = PySimpleGUI.Window('Done',
-                                        layouts.getLayout('ErrorWindow',
+                                        layouts.get_layout('ErrorWindow',
                                                           'Done'))
             window.read()

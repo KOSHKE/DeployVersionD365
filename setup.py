@@ -1,4 +1,4 @@
-filesDict = {
+files_dict = {
   "-Key-": "dynamicsax-ext",
   "-Key1-": "dynamicsax-ext1",
   "-Key2-": "dynamicsax-ext2",
@@ -7,7 +7,7 @@ filesDict = {
   "-Key5-": "dynamicsax-ext5",
 }
 
-xmlDict = {
+xml_dict = {
   "-Key-": "ext",
   "-Key1-": "ext1",
   "-Key2-": "ext2",

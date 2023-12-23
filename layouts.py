@@ -11,7 +11,7 @@ def name(name):
                             pad=(0, 0), font='Courier 10')
 
 
-def getLayout(form: str, value: str = ''):
+def get_layout(form: str, value: str = ''):
     match form:
         case 'MainWindow':
             layout = [
